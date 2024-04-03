@@ -4,7 +4,7 @@ import DropdownList from '../DropdownList';
 import Button from '../Button';
 import { useState } from 'react';
 
-const Form = () =>{
+const Form = (props) =>{
     
     const teams = [
         'Jiu-jitsu',
@@ -25,7 +25,7 @@ const Form = () =>{
 
     const cardSave = (event) =>{
         event.preventDefault()
-        console.log('Form foi submetido: ', name, role, image, team)
+        props.newMember({name,role,image,team})
     }
 
     return(
