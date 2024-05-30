@@ -8,38 +8,38 @@ function App() {
   const teams = [
     {
       name: 'Jiu-jitsu',
-      fistColor: '#d9f7e9',
-      secColor: '#57c278'
+      fistColor: '#82CFFA',
+      secColor: '#E8F8FF'
     },
     {
       name: 'Luta livre',
-      fistColor: '',
-      secColor: ''
+      fistColor: '#A6D157',
+      secColor: '#F0F8E2'
     },
     {
       name: 'Capoeira',
-      fistColor: '#e8f8ff',
-      secColor: '#82cffa'
+      fistColor: '#E06B69',
+      secColor: '#FDE7E8'
     },
     {
       name: 'Muay Thai',
-      fistColor: '#f08fe2',
-      secColor: '#a6d157'
+      fistColor: '#D86EBF',
+      secColor: '#FAE5F5'
     },
     {
       name: 'Judô',
-      fistColor: '#fde7e8',
-      secColor: '#db6ebf'
+      fistColor: '#FEBA05',
+      secColor: '#FFF5D9'
     },
     {
       name: 'MMA',
-      fistColor: '#fff5d9',
-      secColor: '#ffba05'
+      fistColor: '#FF8A29',
+      secColor: '#FFEEDF'
     },
     {
       name: 'Box',
-      fistColor: '#ffeedf',
-      secColor: '#ff8a29'
+      fistColor: '#57C278',
+      secColor: '#D9F7E9'
     },
   ]
 
@@ -51,10 +51,8 @@ function App() {
   return (
     <div className="App">
       <Banner/>
-      <Form newMember={member => addMember(member)} />
-      <Team name="Jiu-Jitsu"/>
-      <Team name="Capoeira"/>
-      <Team name="Box"/>
+      <Form newMember={member => addMember(member)} teams={teams.map(team => team.name)}/>
+      {teams.map( team => <Team key={team.name} name={team.name} fistColor={team.fistColor} secColor={team.secColor}/>)}
     </div>
   );
 }
