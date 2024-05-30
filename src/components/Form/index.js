@@ -6,16 +6,7 @@ import { useState } from 'react';
 
 const Form = (props) =>{
     
-    const teams = [
-        'Jiu-jitsu',
-        'Luta livre',
-        'Capoeira',
-        'Muay Thai',
-        'Judô',
-        'MMA',
-        'Box'
-    ]
-
+   
     const [name, setName] = useState('')
     const [role, setRole] = useState('')
     const [image, setImage] = useState('')
@@ -55,7 +46,7 @@ const Form = (props) =>{
                 <DropdownList
                     required={true}
                     label = "Arte Marcial" 
-                    items = {teams}
+                    items = {props.teams}
                     whenCnange={value => setTeam(value)}
                 />
                 <Button>
